@@ -17,7 +17,7 @@ jobs:
 
       - name: ssh into the server
         run: |
-          sshpass -p 8973214268 ssh -o StrictHostKeyChecking=no incubus@$https://xsf2v7pxbq9f.share.zrok.io << 'EOF'
+          sshpass -p 8973214268 ssh -o StrictHostKeyChecking=no incubus@https://xsf2v7pxbq9f.share.zrok.io << 'EOF'
           pwd
           ls -al
           EOF
