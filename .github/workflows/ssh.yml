@@ -1,0 +1,23 @@
+name: ssh using secrets directly
+
+on:
+  push
+
+jobs:
+  firstjob:
+    runs-on:
+      ubuntu-latest
+
+    steps:
+      - name: first jobs
+        run: echo "hello world"
+
+      - name: install ssh
+        run: sudo apt update && sudo apt install -y sshpass
+
+      - name: ssh into the server
+        run: |
+          sshpass -p 8973214268 ssh -o StrictHostKeyChecking=no incubus@$https://xsf2v7pxbq9f.share.zrok.io << 'EOF'
+          pwd
+          ls -al
+          EOF
